@@ -1,0 +1,23 @@
+{
+  "name": "playwright-starter-kit",
+  "version": "1.0.0",
+  "description": "A small Playwright starter kit with simple UI, API and end-to-end tests",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=ui",
+    "test:api": "playwright test --project=api",
+    "test:e2e": "playwright test --project=e2e",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:headed": "playwright test --project=ui --headed",
+    "test:debug": "playwright test --project=ui --debug",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.0.0",
+    "dotenv": "^17.0.0",
+    "typescript": "^5.9.0"
+  }
+}
