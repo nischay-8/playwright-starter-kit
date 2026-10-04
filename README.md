@@ -46,7 +46,7 @@ Run one file: `npx playwright test tests/ui/login.spec.ts`
 playwright-starter-kit/
 ├── playwright.config.ts   # 4 projects: ui, api, setup, e2e. Reads .env.
 ├── fixtures/test.ts       # Custom fixtures that give each test its page objects
-├── pages/                 # Page objects for the Sauce Demo shop
+├── pages/                 # Page objects (POM) for the Sauce Demo shop
 │   ├── loginPage.ts
 │   ├── inventoryPage.ts
 │   └── checkoutPage.ts
@@ -63,6 +63,7 @@ playwright-starter-kit/
 ## Core concepts
 
 - **Projects.** `playwright.config.ts` defines 4 projects. The `ui` and `api` projects point to different folders and different base URLs. The `e2e` project depends on `setup`, so the login runs first.
+- **Page Object Model (POM).** This project uses the POM pattern for UI tests. Each page of the web shop has one class in `pages/`. The class holds the locators and the actions of that page. Tests do not use selectors directly. If the page changes, you change one class and not every test. `fixtures/test.ts` gives the page objects to the tests.
 - **Page objects.** One class per page in `pages/`. Locators are private methods. Actions and checks are public async methods. A test reads like a list of user steps.
 - **Fixtures.** `fixtures/test.ts` extends the Playwright `test` with `loginPage`, `inventoryPage` and `checkoutPage`. A test asks for them in its arguments:
   ```ts
