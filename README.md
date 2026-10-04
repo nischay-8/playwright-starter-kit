@@ -52,6 +52,8 @@ playwright-starter-kit/
 │   └── checkoutPage.ts
 ├── api/bookingClient.ts   # One method per Restful Booker endpoint
 ├── test-data/             # Test data builders and constants
+├── config/                # Empty on purpose: per-environment settings (see config/README.md)
+├── utils/                 # Empty on purpose: shared helpers (see utils/README.md)
 ├── tests/
 │   ├── ui/                # 5 tests: login and inventory
 │   ├── api/               # 5 tests: auth and booking
